@@ -1,0 +1,100 @@
+<!DOCTYPE >
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Manipulating the DOM</title>
+    <!-- Load Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Fira+Sans:900|Merriweather&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Load Styles -->
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- HTML Follows BEM naming conventions 
+      IDs are only used for sections to connect menu achors to sections -->
+    <header class="page__header">
+      <nav class="navbar__menu">
+        <!-- Navigation starts as empty UL that will be populated with JS -->
+        <ul id="navbar__list"></ul>
+      </nav>
+    </header>
+    <main>
+      <header class="main__hero">
+        <h1>Landing Page</h1>
+      </header>
+      <!-- Each Section has an ID (used for the anchor) and 
+    a data attribute that will populate the li node.
+    Adding more sections will automatically populate nav.
+    The first section is set to active class by default -->
+      <section id="section1" data-nav="Section 1" class="your-active-class">
+        <div class="landing__container">
+          <h2>C++ Intro</h2>
+          <p>
+            C++ is a cross-platform language that can be used to create
+            high-performance applications. C++ was developed by Bjarne
+            Stroustrup, as an extension to the C language. C++ gives programmers
+            a high level of control over system resources and memory.
+          </p>
+
+          <p>
+            C++ is one of the world's most popular programming languages. C++
+            can be found in today's operating systems, Graphical User
+            Interfaces, and embedded systems. C++ is an object-oriented
+            programming language which gives a clear structure to programs and
+            allows code to be reused, lowering development costs. C++ is
+            portable and can be used to develop applications that can be adapted
+            to multiple platforms.
+          </p>
+        </div>
+      </section>
+      <section id="section2" data-nav="Section 2">
+        <div class="landing__container">
+          <h2>Java</h2>
+          <p>
+            Java is a popular programming language, created in 1995. It is owned
+            by Oracle, and more than 3 billion devices run Java. It is used for:
+          </ul>
+          </p>
+
+          <p>
+            <ul>
+              <li style="padding-bottom: 10px;">Java works on different platforms (Windows, Mac, Linux, Raspberry
+              Pi, etc.) </li>
+              <li style="padding-bottom: 10px;"> is one of the most popular programming language in the
+              world</li> 
+              <li style="padding-bottom: 10px;"> is easy to learn and simple to use</li>
+              <li style="padding-bottom: 10px;">It is open-source and</li>
+              <li style="padding-bottom: 10px;">free It is secure, fast and powerful</li>
+              <li style="padding-bottom: 10px;">It has a huge community support (tens of millions of developers) </li>
+              <li style="padding-bottom: 10px;">Java is an object oriented language</li>
+            </ul>
+          </p>
+        </div>
+      </section>
+      <section id="section3" data-nav="Section 3">
+        <div class="landing__container">
+          <h2>JavaScript</h2>
+          <p>
+            JavaScript is a scripting language used to create and control dynamic website content,\
+            i.e. anything that moves, refreshes, or otherwise changes on your screen without requiring you to manually reload a web page.
+            Features like:
+            <ul>
+              <li style="padding-bottom: 10px;">animated graphics</li>
+              <li style="padding-bottom: 10px;">photo slideshows</li>
+              <li style="padding-bottom: 10px;">autocomplete text suggestions</li>
+              <li style="padding-bottom: 10px;">interactive forms</li>
+            </ul>
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer class="page__footer">
+      <p>&copy Udacity</p>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>
