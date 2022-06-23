@@ -1,7 +1,3 @@
-/**************get media query***********************/
-const mediaQuery = window.matchMedia('(min-width: 35em)')
-
-
 /*
 *   @param {HTMLElement} node - the element that is checked 
 *   @description checks if an element is currently in view
@@ -58,7 +54,7 @@ const fillList = (fragment, i) => {
     anchor.setAttribute('class', 'menu__link');
     // anchor.setAttribute('href',  `#section${i+ 1}`);
     li.appendChild(anchor);
-    fragment.appendChild(li);
+    fragment.appendChild(li);   
 }
 
 
@@ -121,13 +117,13 @@ navBar.addEventListener('click', (e)=> {
     const id = e.target.textContent.slice(8);
     for(const section of sectionList){
         if(section.getAttribute('id').slice(7) == id){     
+            document.querySelector('.your-active-class').classList.remove('your-active-class');
+            section.classList.add('your-active-class');
             // const sectionToScrollTo
             section.scrollIntoView({
                 behavior: 'smooth'
             });
         }
-        document.querySelector('.your-active-class').classList.remove('your-active-class');
-        section.classList.add('your-active-class');
     }
 });
 /**************Build Nav bar*****************/
@@ -141,7 +137,7 @@ navBar.addEventListener('click', (e)=> {
 
 document.addEventListener('scroll', (e)=> {
     const header = document.getElementsByClassName('page__header');
-    header[0].style.cssText = "Visibilty: visible;";
+    header[0].style.cssText = "visibility: visible;"
     for(section of sectionList){
         if(isInView(section.querySelector('.landing__container'))){
             document.querySelector('.your-active-class').classList.remove('your-active-class');
@@ -172,8 +168,9 @@ document.addEventListener('scroll', (e)=> {
     }
     timer = setTimeout(function() {
         const header = document.getElementsByClassName('page__header');
-        if(isInView(document.querySelector('h1')) == false)
+        if(isInView(document.querySelector('h1')) == true){
             header[0].style.cssText = "visibility: hidden;";
+        }
     }, 800);
 });
 /**************Hide navBar when not scrolling*****************/
